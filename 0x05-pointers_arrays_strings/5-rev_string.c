@@ -2,37 +2,25 @@
 #include "main.h"
 
 /**
-* rev_string - Reverses a string
-* @s: string to be reversed
+*more_numbers - prints numbers to 14
 *
-* Return: nothing
+*Return: returns nothing
 */
 
-void rev_string(char *s)
+void more_numbers(void)
 {
-	int i, tmp, len = _strlen(s);
+	int n1, n2;
 
-	for (i = 0; i < len / 2; i++)
+	for (n1 = 0; n1 < 10; n1++)
 	{
-		tmp = *(s + i);
-		*(s + i) = *(s + len - i - 1);
-		*(s + len - i - 1) = tmp;
+		for (n2 = 0; n2 <= 14; n2++)
+		{
+			if (n2 > 9)
+			{
+				putchar((n2 / 10) + '0');
+			}
+			putchar((n2 % 10) + '0');
+		}
+		putchar(10);
 	}
-}
-
-/**
-* _strlen - returns the length of a string
-* @s: string
-*
-* Return: the length of the given string
-*/
-
-int _strlen(char *s)
-{
-	int len = 0;
-
-	while (*(s + len) != '\0')
-		len++;
-
-	return (len);
 }
